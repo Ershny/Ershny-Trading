@@ -1,0 +1,129 @@
+.sidebar {
+    position: fixed;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: rgba(8, 8, 8, 0.1);
+    background-image: linear-gradient(to right,
+    rgba(8, 8, 8, 0.1) 220px,
+    var(--bg-main) 260px);
+    left: 0;
+    top: 0;
+    padding: 0;
+    border-right: none; /* Gradientul face trecerea acum */
+    z-index: 100;
+}
+
+.logo {
+    color: var(--accent);
+    margin: 20px 20px 40px 0;
+    text-align: center;
+    padding: 20px;
+    font-family: "Baumans", sans-serif;
+    border-bottom: 2px solid var(--accent);
+}
+
+.logoName {
+    margin: 0;
+    font-size: 1.8rem; /* Ajustat pentru ArcherTrading */
+    display: block;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.logoName span {
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+.logoMoto {
+    margin-top: 5px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    display: block;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* NavLink de la React Router adaptat la stilul tău */
+.nav-link {
+    display: flex;
+    justify-content: space-between;
+    border-left: 2px solid var(--accent);
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+    background-size: 0% 100%;
+    background-image: linear-gradient(to right, var(--accent), var(--bg-main));
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    transition: background-size 0.3s ease-in-out;
+    font-size: 1.05rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-link:hover, .nav-link.active {
+    background-size: 100% 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--bg-sidebar);
+    border-color: #080808;
+}
+
+/* Dacă link-ul este activ, să rămână plin */
+.nav-link.active {
+    background-size: 100% 100%;
+    background-color: rgba(252, 213, 53, 0.1); /* Galben transparent */
+    color: var(--bg-main);
+}
+
+.nav-icon {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.sidebar-nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.nav-link {
+    font-size: 1.05rem;
+    transition: var(--transition);
+}
+
+.nav-icon {
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.sidebar-footer {
+    padding: 20px 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--success);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--success);
+}

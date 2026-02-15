@@ -1,0 +1,130 @@
+.history-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- STATS DASHBOARD --- */
+.stats-dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(255, 191, 0, 0.03);
+    border: 1px solid rgba(255, 191, 0, 0.1);
+    border-radius: 6px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-label {
+    font-size: 0.55rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+}
+
+.stat-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #eee;
+}
+
+.stat-val.plus { color: #00ff88; }
+.stat-val.minus { color: #ff4444; }
+.stat-val small { font-size: 0.6rem; opacity: 0.5; }
+
+.stat-card.highlighted .stat-val {
+    color: #ffbf00;
+}
+
+/* --- SCROLLBAR GALBEN (Archer Style) --- */
+.trade-pairs-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.trade-pairs-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.trade-pairs-list::-webkit-scrollbar-thumb {
+    background: #ffbf00; /* Galben Archer */
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(255, 191, 0, 0.3);
+}
+
+.trade-pairs-list::-webkit-scrollbar-thumb:hover {
+    background: #ffd040;
+}
+
+/* --- CARDURI & GRID --- */
+.trade-pairs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 5px 12px 30px 5px;
+    max-height: 650px;
+    overflow-y: auto;
+}
+
+.trade-pair-card {
+    display: grid;
+    grid-template-columns: 140px 1fr 200px;
+    background: rgba(20, 20, 20, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    min-height: 140px;
+}
+
+.trade-pair-card.live { border-left: 4px solid #ffbf00; }
+
+.col-info {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.label { font-size: 0.6rem; color: rgba(255, 255, 255, 0.3); text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+.val { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-bottom: 12px; }
+.val-asset { font-family: 'Baumans', sans-serif; font-size: 1.2rem; color: #fff; }
+
+.col-execution { display: flex; flex-direction: column; }
+.exec-row { flex: 1; display: flex; align-items: center; padding: 0 25px; gap: 15px; }
+.exec-row.buy { border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+
+.badge-buy { background: #00ff88; color: #000; padding: 4px 8px; border-radius: 2px; font-weight: bold; font-size: 0.65rem; }
+.badge-sell { background: #ff4444; color: #fff; padding: 4px 8px; border-radius: 2px; font-weight: bold; font-size: 0.65rem; }
+
+.price { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: bold; color: #fff; }
+.date { font-size: 0.65rem; color: rgba(255, 255, 255, 0.3); margin-left: 10px; }
+
+.open-position-tag { color: #ffbf00; border: 1px solid rgba(255, 191, 0, 0.3); padding: 5px 12px; font-size: 0.7rem; font-weight: bold; }
+
+.col-performance {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+}
+
+.perf-metric { display: flex; flex-direction: column; gap: 4px; }
+.timer { font-family: 'JetBrains Mono', monospace; font-size: 1rem; color: #eee; }
+.timer.active { color: #ffbf00; }
+.value { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: bold; }
+.value.plus { color: #00ff88; }
+.value.minus { color: #ff4444; }
+
+.live-status { display: flex; align-items: center; gap: 8px; color: #ffbf00; font-size: 0.65rem; font-weight: bold; }
+.pulse { width: 6px; height: 6px; background: #ffbf00; border-radius: 50%; animation: pulse-simple 1.5s infinite; }
+@keyframes pulse-simple { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }

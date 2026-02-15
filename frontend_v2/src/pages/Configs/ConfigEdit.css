@@ -1,0 +1,198 @@
+.config-edit-page {
+    animation: fadeIn 0.4s ease-out;
+    padding: 0 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    /* Blocăm înălțimea paginii pentru a forța scroll-ul intern */
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Layout-ul principal cu scroll-uri separate */
+.edit-layout {
+    display: flex;
+    gap: 40px;
+    margin-top: 25px;
+    flex: 1;
+    min-height: 0;
+}
+
+/* --- COLOANA STÂNGA: FORM (Cu scroll vertical) --- */
+.config-form {
+    flex: 0 0 calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto; /* Revenim la scroll-ul vertical aici */
+    overflow-x: hidden;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
+
+.form-section {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section-title {
+    color: var(--accent);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(252, 213, 53, 0.2);
+    padding-bottom: 10px;
+    font-family: "Baumans", sans-serif;
+}
+
+/* Stiluri Input-uri */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+input {
+    background: var(--bg-main);
+    border: 1px solid #222;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: var(--accent);
+    outline: none;
+}
+
+/* --- COLOANA DREAPTĂ: ASSETS (Limitată la înălțimea layout-ului) --- */
+.asset-selector-column {
+    flex: 0 0 calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.asset-section {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Zonele de Scroll (Scroll-ul galben Archer) */
+.selected-preview-area,
+.assets-grid {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 15px;
+    padding-right: 10px;
+}
+
+/* Custom Scrollbar */
+.selected-preview-area::-webkit-scrollbar,
+.assets-grid::-webkit-scrollbar,
+.config-form::-webkit-scrollbar {
+    width: 4px;
+}
+
+.selected-preview-area::-webkit-scrollbar-track,
+.assets-grid::-webkit-scrollbar-track,
+.config-form::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.selected-preview-area::-webkit-scrollbar-thumb,
+.assets-grid::-webkit-scrollbar-thumb,
+.config-form::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+/* Grids Assets */
+.assets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+    gap: 10px;
+    align-content: start;
+}
+
+.assets-grid-mini {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 8px;
+    align-content: start;
+}
+
+.asset-box, .asset-box-mini {
+    text-align: center;
+    background: var(--bg-main);
+    border: 1px solid #222;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.asset-box { padding: 10px 5px; font-size: 0.75rem; }
+.asset-box-mini { padding: 6px 2px; font-size: 0.65rem; }
+
+.asset-box.active, .asset-box-mini.active {
+    background-color: var(--accent);
+    color: var(--bg-main);
+    border-color: var(--accent);
+}
+
+/* Footer Global fixat sub coloane */
+.global-form-footer {
+    flex: 0 0 auto;
+    margin-top: 20px;
+    padding: 15px 0 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    gap: 20px;
+}
+
+.empty-msg, .loading-text {
+    color: #444;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

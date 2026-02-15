@@ -1,0 +1,57 @@
+/* 1. IMPORTURI - Rămân aici mereu */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baumans&family=Inter:wght@400;600;800&display=swap');
+
+/* 2. VARIABILE - Culorile tale de brand */
+:root {
+  --bg-main: #0b0e11;
+  --bg-card: #1e2329;
+  --bg-sidebar: #12161c;
+  --accent: #fcd535;
+  --text-primary: #eaecef;
+  --text-secondary: #848e9c;
+  --border-color: #2b3139;
+  --success: #0ecb81;
+  --danger: #f6465d;
+
+  --sidebar-width: 260px;
+  --border-radius: 12px;
+  --transition: all 0.2s ease-in-out;
+}
+
+/* 3. RESET - Curățăm stilurile browser-ului */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif; /* Fontul principal */
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+/* Utilitate pentru cifre/cod (fontul mono) */
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* 4. LAYOUT DE BAZĂ */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width); /* Lasă loc sidebar-ului fix */
+  padding: 40px;
+}
+
+.content-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}

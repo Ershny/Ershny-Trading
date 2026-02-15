@@ -1,0 +1,88 @@
+.pockets-selection-side {
+    width: 100%;
+}
+
+.pockets-static-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.pocket-mini-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.p-card-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.pocket-mini-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateX(5px);
+}
+
+.pocket-mini-card.active {
+    background: rgba(255, 191, 0, 0.07);
+    border-color: var(--accent);
+}
+
+.p-index-box {
+    min-width: 35px;
+}
+
+.p-index {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.p-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.p-currency {
+    font-family: 'Baumans', sans-serif;
+    font-size: 1.3rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.p-status-text {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Noul stil pentru Timer */
+.p-timer-section {
+    margin-left: auto;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-timer-label {
+    font-size: 0.55rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 1px;
+}
+
+.p-timer-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 600;
+}

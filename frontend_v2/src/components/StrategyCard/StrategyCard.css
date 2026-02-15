@@ -1,0 +1,146 @@
+.strategy-card {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+}
+
+.strategy-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    background: var(--bg-main);
+    box-shadow: inset 0 0 12px rgba(255, 191, 0, 0.3);
+}
+
+/* Header & Status */
+.card-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 20px;
+    margin-bottom: 15px;
+}
+
+.bot-status-indicator {
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.bot-status-indicator.active {
+    background: var(--success);
+    color: #000;
+}
+
+/* Strategy Title */
+.strategy-name {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-family: "Baumans", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Assets Preview Section */
+.assets-preview {
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.assets-preview .label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.mini-tag {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Specs Grid - Optimized for Spacing */
+.specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.spec-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Spațiu între Label și Value */
+}
+
+.spec-label {
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.spec-value {
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    display: flex;
+    align-items: center; /* Aliniere verticală pentru cifre și separatori */
+    color: var(--text-primary);
+}
+
+.spec-value .buy { color: var(--success); }
+.spec-value .sell { color: var(--danger); }
+
+/* Detalii fine pentru RSI și Unități */
+.rsi-separator {
+    color: var(--text-secondary);
+    margin: 0 6px;
+    font-weight: 300;
+    opacity: 0.4;
+}
+
+.unit {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-left: 2px;
+    font-weight: 400;
+}
+
+/* Footer & Buttons Layout */
+.card-footer {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
+
+/* Suprascriere opțională pentru butoane dacă vrei să le forțezi alinierea în card */
+.card-footer > button {
+    flex: 1;
+}

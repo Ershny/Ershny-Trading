@@ -1,0 +1,66 @@
+/* CONTAINERUL NORMAL (Cel pe care îl folosim pe Configs) */
+.h1Container {
+    width: 100%;
+    border-left: 2px outset transparent;
+    background-color: rgba(8, 8, 8, 0.1);
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: inset 0px 4px 12px #000;
+}
+
+.h1Container h1 {
+    font-size: 2.0em;
+    margin: 0;
+    padding: 0.5em 1em;
+    width: 100%;
+}
+
+/* CONTAINERUL INVERTED (Pentru highlight-uri agresive) */
+.h1InvertedContainer {
+    width: 100%;
+    border-left: 5px outset transparent;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: flex-start;
+    box-shadow: inset 0px -4px 12px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.h1InvertedContainer h1 {
+    font-size: 2.0em;
+    margin: 0;
+    padding: 0.5em 1em;
+    width: 100%;
+    color: var(--bg-main); /* Textul devine culoarea fundalului */
+}
+
+/* MODIFICATORI DE CULOARE - DIRECT PE VARIABILELE NOASTRE */
+
+/* Accent (Galbenul Archer) */
+.accent {
+    border-color: var(--accent) !important;
+}
+
+.textAccent {
+    color: var(--accent);
+}
+
+.h1InvertedContainer.accent {
+    background-image: linear-gradient(to right, var(--accent), rgba(8, 8, 8, 0.1));
+    background-color: transparent;
+}
+
+/* Danger (Roșul Archer) */
+.danger {
+    border-color: var(--danger) !important;
+}
+
+.textDanger {
+    color: var(--danger);
+}
+
+.h1InvertedContainer.danger {
+    background-image: linear-gradient(to right, var(--danger), rgba(8, 8, 8, 0.1));
+    background-color: transparent;
+}

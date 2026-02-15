@@ -1,0 +1,71 @@
+/* --- BASE STYLES --- */
+.btn-inverted, .btn-default {
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+/* --- INVERTED (Border only) --- */
+.btn-inverted {
+    border-width: 2px;
+    border-style: inset;
+    background-color: transparent;
+}
+
+.btn-inverted:hover {
+    box-shadow: inset 0 6px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* --- DEFAULT (Solid background) --- */
+.btn-default {
+    border: 2px solid transparent;
+}
+
+/* --- SIZE & UTILITY --- */
+.btn-sm { padding: 8px 15px; font-size: 12px; }
+.btn-lg { padding: 12px 30px; font-size: 18px; }
+.btn-full { display: block; width: 100%; }
+
+/* --- COLORS: ACCENT (Primary) --- */
+.primary-btn-inverted {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+.primary-btn-inverted:hover {
+    background-color: var(--accent);
+    color: var(--bg-main); /* Textul devine culoarea fundalului la hover */
+}
+
+.primary-btn-default {
+    background-color: var(--accent);
+    color: var(--bg-main);
+}
+.primary-btn-default:hover {
+    background-color: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* --- COLORS: DANGER (Error) --- */
+.error-btn-inverted {
+    color: var(--danger);
+    border-color: var(--danger);
+}
+.error-btn-inverted:hover {
+    background-color: var(--danger);
+    color: white;
+}
+
+.error-btn-default {
+    background-color: var(--danger);
+    color: white;
+}
+.error-btn-default:hover {
+    background-color: transparent;
+    color: var(--danger);
+    border-color: var(--danger);
+}

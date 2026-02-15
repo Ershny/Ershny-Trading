@@ -1,0 +1,73 @@
+.portofolios-page {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.portofolios-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.portofolios-list-container {
+    margin-top: 40px;
+}
+
+.wide-cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Spațiu între cardurile orizontale */
+}
+
+/* Status Messages */
+.status-msg {
+    text-align: center;
+    padding: 60px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.status-msg.error {
+    color: var(--danger);
+    border: 1px solid var(--danger);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 100px 20px;
+    border: 1px dashed rgba(255, 191, 0, 0.2);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.empty-state p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Efectul de scanare la loading */
+.scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+    animation: scan 2s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
