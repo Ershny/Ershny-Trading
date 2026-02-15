@@ -2,7 +2,6 @@
 .env
 build/
 .DS_Store
-frontend_v1/
 frontend_v2/node_modules
 frontend_v2/.pnp
 frontend_v2/.pnp.js

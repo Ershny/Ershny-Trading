@@ -51,9 +51,9 @@ async function seedDB() {
         });
 
         const portfolioData = [
-            { name: "Portofoliu Conservator", config: cSafe._id },
-            { name: "Portofoliu Mediu", config: cMedium._id },
-            { name: "Portofoliu Agresiv", config: cAggressive._id }
+            {name: "Portofoliu Conservator", status: 'Active', config: cSafe._id},
+            {name: "Portofoliu Mediu", status: 'Active', config: cMedium._id},
+            {name: "Portofoliu Agresiv", status: 'Active', config: cAggressive._id}
         ];
 
         for (const p of portfolioData) {

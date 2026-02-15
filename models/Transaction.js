@@ -40,11 +40,16 @@ const transactionSchema = new mongoose.Schema({
     is_closed: {
         type: Boolean,
         default: false
-    }, // Devine true după ce se vinde
+    },
     related_sell_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Transaction'
-    }, // Legătura cu Sell-ul
+    },
+    rsi_at_transaction: {
+        type: Number,
+        required: false,
+        default: null
+    },
     date: {
         type: Date,
         default: Date.now
